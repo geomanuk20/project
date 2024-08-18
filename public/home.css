@@ -1,0 +1,317 @@
+body {
+  transition: background-color 0.5s ease;
+}
+
+.dark-mode {
+  background-color: black;
+  color: #fff;
+}
+
+#search{
+    width: 650px;
+    height: 35px;
+}
+.form-control:focus,
+.form-control:active {
+    border-color: white; /* or transparent, or any color you want when focused/active */
+    box-shadow: none; /* optional: remove box shadow if present */
+}
+.card {
+    width: 200px; /* Adjust the width as needed */
+  }
+  .card-img-top {
+    height: 120px; /* Adjust the height as needed */
+    object-fit: contain;
+  }
+  #card{
+    height: 320px;
+  }
+  #div1{
+    height: 400px;
+    width: 750px;
+    border: 1px solid gainsboro;
+    border-radius: 20px;
+    float: right;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-left: 20px;
+   
+  }
+#ads{
+    padding-top: 30px;
+}
+#div2{
+    height: 400px;
+    width: 1500px;
+    border: 1px solid gainsboro;
+    border-radius: 20px;
+    float: right;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-left: 20px;
+   
+  }
+  #div3{
+    height: 350px;
+    width: 1500px;
+    border: 1px solid gainsboro;
+    float: right;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-left: 20px;
+    background-color: #2e2c73;
+    color: white;
+  }
+  #link{
+    text-decoration: none;
+    color: white;
+  }
+  
+#profile{
+  height: 100px;
+  width: 250px;
+  border: 1px solid rgb(207, 65, 65);
+  border-radius: 5px;
+}
+#list{
+  height: 500px;
+  width: 250px;
+  margin: 50px;
+  background-color: white;
+  margin-left: 200px;
+}
+#border{
+  border-bottom: 1px solid black;
+}
+#text{
+  text-decoration: none;
+}
+#myorder{
+  height: 100%;
+  width: 750px;
+  border: 1px solid gray;
+  margin-top: -530px;
+  margin-left: 500px;
+}
+#address{
+  height: 400px;
+  width: 700px;
+  margin-top: -880px;
+  margin-left: 500px;
+}
+#myorder2{
+  height: 350px;
+  width: 700px;
+  border: 1px solid gray;
+  margin-top: -530px;
+  margin-left: 500px;
+  
+}
+.dropdown-toggle::after {
+  display: none; /* Hide the default dropdown arrow */
+  
+}
+
+/* Adjust padding if necessary */
+.dropdown-toggle {
+  padding-right: 1rem; /* Adjust as needed */
+}
+#collapseExample.card-body {
+  width: 400px/* Your desired width */
+}
+
+#collapseExample .card-body {
+  height: 400px;
+  width: 700px;
+  
+}
+#addressoption{
+  height: 100%;
+  width: 400px;
+  border: 2px solid black;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+#addressoption2{
+  height: 100%;
+  width: 700px;
+  border: 2px solid black;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+#mobile{
+  height: auto;
+  width: 1100px;
+  border: 1px solid gainsboro;
+  border-radius: 10px;
+  margin-left: 350px;
+  margin-top: -680px;
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-left: 20px;
+   
+}
+#mobile1{
+  height: 70px;
+  width: 1450px;
+  background-color: rgb(147, 214, 147);
+  margin-top: 25px;
+  margin-left: 25px;
+  border-radius: 30px;
+}
+#cate{
+  height: 300px;
+  width: 230px;
+  border: 1px solid rgb(233, 230, 230);
+  border-radius: 20px;
+  margin-left: 80px;
+  margin-top:40px;
+}
+#watches{
+  margin-top: 30px;
+}
+#brand{
+  height: auto;
+  width: 230px;
+  border: 1px solid rgb(233, 230, 230);
+  border-radius: 20px;
+  margin-left: 80px;
+  margin-top:10px;
+}
+#line{
+  border-top: 1px solid gray;
+}
+#mobiledetail{
+  height: auto;
+  width: 1300px;
+  float: right;
+  margin-top: -10px;
+  
+   
+}
+#buy {
+  width: 200px;
+  height: 40px;
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+}
+#cod{
+  height: 150px;
+  width: 380px;
+  background-color: gainsboro;
+  border-radius: 10px;
+}
+.cod-item{
+  height: 70px;
+  width: 80px;
+  
+  font-size: xx-small;
+  margin-inline-start: 15px;
+  margin-top: 30px;
+  margin-right: 25px;
+  text-align: center;
+}
+.more-content {
+  display: none;
+}
+.show-more-button, .show-less-button {
+  cursor: pointer;
+  color: blue;
+  text-decoration: none;
+  float: right;
+}
+#spec{
+  margin-right: 250px;
+  float: inline-start;
+}
+#spec-value{
+  margin-left: 5px; 
+  display: inline-block;
+}
+#admintext{
+  font-size: x-small;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.align-middle{
+  font-size: x-small;
+}
+/*specification*/
+.spec-container {
+  display: flex;
+  margin-bottom: 10px; /* Adjust the value as needed for space between pairs */
+  align-items: flex-start; /* Aligns items at the start of the flex container */
+  flex-wrap: wrap; /* Allows wrapping for long text */
+}
+.spec-label {
+  font-weight: bold;
+  width: 220px; /* Adjust the width as needed */
+  white-space: nowrap; /* Prevents the label from wrapping */
+}
+.spec-value {
+  flex: 1; /* Takes the remaining space */
+  overflow-wrap: break-word; /* Ensures long words break properly */
+  max-width: calc(100% - 270px); /* Ensures value stays in line, adjust based on label width */
+}
+
+#mycart{
+  height: auto;
+  width: 700px;
+  border: 1px solid gainsboro;
+  margin-left: 250px;
+  margin-top: 25px;
+  font-size: large;
+  
+}
+#checkout{
+  height: 320px;
+  width: 380px;
+  border: 1px solid gainsboro;
+  float: right;
+  margin-top: -60px;
+  margin-right: 160px;
+  position: sticky;
+}
+#processcheckout{
+  width:320px;
+  height: 45px;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  background-color: #FF5F1F;
+}
+#quantity{
+  float: right;
+  margin-top: -150px;
+}
+
+
+
+.favorite-btn {
+  background-color: white;
+  border: 2px solid #ffcc00;
+  color: #ffcc00;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.favorite-btn.active {
+  background-color: #ffcc00;
+  color: white;
+}
+
+#favoriteIcon {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+.favorite-btn.active #favoriteIcon {
+  color: white;
+}

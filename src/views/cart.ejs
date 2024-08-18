@@ -1,0 +1,83 @@
+<%- include('partials/header', { title: title }) %>
+
+<section>
+    <% if (carts.length > 0) { %>
+        <div id="mycart">
+            <p class="mt-3 ms-3"><strong>My Cart</strong></p> 
+        </div>
+        <div id="checkout">
+            <h5 class="ms-4 mt-4">Price Details</h5>
+            <% 
+                let subTotal = 0;
+                carts.forEach(cart => { subTotal += parseFloat(cart.price * cart.quantity) });
+                let totalDiscount = carts.reduce((sum, cart) => sum + (cart.price * cart.quantity * (cart.discountPercentage / 100)), 0);
+                let discountedTotal = subTotal - totalDiscount;
+                let deliveryCharge = discountedTotal > 500 ? 0 : 50;
+                let totalAmount = discountedTotal + deliveryCharge;
+
+                function formatNumber(num) {
+                    return num.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ",").replace(/^0+/, '');
+                }
+            %>
+            <h6 class="mt-5 ms-4">SUB TOTAL <span style="float: right;padding-right: 50px;font-weight: 100;">₹<%= formatNumber(subTotal) %></span></h6>
+            <h6 class="mt-1 ms-4">DISCOUNT <span style="float: right;padding-right: 50px;font-weight: 100;">₹<%= formatNumber(totalDiscount) %></span></h6>
+            <h6 class="mt-1 ms-4">DELIVERY <span style="float: right;padding-right: 50px;font-weight: 100;"><%= deliveryCharge === 0 ? "Free" : "₹" + formatNumber(deliveryCharge) %></span></h6>
+            <p class="mt-3 ms-4" style="font-weight:bold;">TOTAL AMOUNT<span style="float: right;padding-right: 50px;font-weight: bold; font-size: larger;">₹<%= formatNumber(totalAmount) %></span></p>
+
+            <a class="mx-4" href=""><button id="processcheckout" class="mt-4">PROCEED TO CHECKOUT</button></a>
+        </div>
+        <% carts.forEach(cart => { %>
+        <div>
+            <div class="card mb" id="mycart">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img width="170px" height="170px" src="<%= cart.imagePath %>" >
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= cart.model %></h5>
+                            <p class="card-text"><%= cart.Color %></p>
+                            <p class="card-text">
+                            <% 
+                                let discount = cart.price * (cart.discountPercentage / 100);
+                                let discountedPrice = cart.price - discount;
+                            %>            
+                            <p class="card-text"><h5>₹<%= formatNumber(discountedPrice) %></h5></p>
+                                <span class="original-price" style="text-decoration: line-through; color: green">MRP: ₹<%= formatNumber(cart.price) %></span> 
+                                <span><small style="color: red; text-decoration: none"><%= cart.discountPercentage %>% off</small></span>    
+                            </p>
+                            <div id="quantity" class="mb-2">
+                                <h6 class="ps-2">Quantity</h6>
+                                <form action="/cart/update" method="POST" style="display: inline;">
+                                    <input type="hidden" name="product" value="<%= cart._id %>">
+                                    <input type="hidden" name="quantity" value="-1">
+                                    <button class="bg-primary" type="submit" id="decreaseQuantity" style="text-decoration: none;color: white; border: 1px solid blue;border-radius: 5px;">-</button>
+                                    <input style="width: 30px; border: none;" type="text" readonly value="<%= cart.quantity %>">
+                                </form>
+                                <form action="/cart/update" method="POST" style="display: inline;">
+                                    <input type="hidden" name="product" value="<%= cart._id %>">
+                                    <input type="hidden" name="quantity" value="1">
+                                    <button class="bg-primary" type="submit" id="increaseQuantity" style="text-decoration: none;color: white; border: 1px solid blue;border-radius: 5px;">+</button>
+                                </form>
+                                <br>
+                                <a style="text-decoration: none; color: red;font-size: medium;" class="ps-3" href="/deleted-cart/<%= cart._id %>">Remove</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% }); %>
+    <% } else { %>
+        <div class="mt-5 pt-5">
+            <img  style="margin-left: 650px;" width="250px" height="250px" src="/public/ads/cartnew.jpg" alt="">
+            <h5 class="text-center">Your Cart is Empty!</h5>
+            <h6 class="text-center">Must add items to the cart before you proceed to checkout</h6>
+            <button style="margin-left: 690px; height: 45px; border: none; border-radius: 5px;" class="bg-primary">
+                <a style="text-decoration: none; color: white;" href="/home">Continue Shopping</a>
+            </button>
+        </div>
+    <% } %>
+</section>
+
+

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                position:"top-end",
+                title: "<%= type === 'success' ? 'Success' : 'Error' %>",
+                text: "<%= message %>",
+                icon: "<%= type %>",
+                showConfirmButton: false,
+                timer: 1500
+            }).then(() => {
+                window.location.href = '';
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+<div id="storagedevice-fields" style="display: none;">
+  <div id="div3" class="form-group">
+    <label id="div3" for="password">ModelNumberSD:</label>
+     <input id="div3" type="text" class="form-control" id="ModelNumberSD" name="ModelNumberSD" placeholder="ModelNumberSD"  minlength="1">
+     </div>
+     <div id="div3" class="form-group">
+     <label id="div3" for="password">WeightSD:</label>
+     <input id="div3" type="text" class="form-control" id="WeightSD" name="WeightSD" placeholder="WeightSD"  minlength="1">
+   </div>
+   <div id="div3" class="form-group">
+     <label id="div3" for="password">MemoryStorageCapacitySD:</label>
+     <input id="div3" type="text" class="form-control" id="MemoryStorageCapacitySD" name="MemoryStorageCapacitySD" placeholder="MemoryStorageCapacitySD"  minlength="1">
+   </div>
+   <div id="div3" class="form-group">
+    <label id="div3" for="password">FlashMemoryTypeSD:</label>
+    <input id="div3" type="text" class="form-control" id="FlashMemoryTypeSD" name="FlashMemoryTypeSD" placeholder="FlashMemoryTypeSD"  minlength="1">
+  </div>
+   <div id="div3" class="form-group">
+     <label id="div3" for="password">DigitalStorageCapacitySD:</label>
+     <input id="div3" type="text" class="form-control" id="DigitalStorageCapacitySD" name="DigitalStorageCapacitySD" placeholder="DigitalStorageCapacitySD"  minlength="1">
+   </div>
+   <div id="div3" class="form-group">
+     <label id="div3" for="password">HardWareInterfaceSD:</label>
+     <input id="div3" type="text" class="form-control" id="HardWareInterfaceSD" name="HardWareInterfaceSD" placeholder="HardWareInterfaceSD"  minlength="1">
+   </div>
+  <div id="div3" class="form-group">
+     <label id="div3" for="password">CampatibleDevicesSD:</label>
+     <input id="div3" type="text" class="form-control" id="CampatibleDevicesSD" name="CampatibleDevicesSD" placeholder="CampatibleDevicesSD"  minlength="1">
+   </div>
+  <div id="div3" class="form-group">
+    <label id="div3" for="password">SpecialFeatureSD:</label>
+    <input id="div3" type="text" class="form-control" id="SpecialFeatureSD" name="SpecialFeatureSD" placeholder="SpecialFeatureSD"  minlength="1">
+  </div>
+  <div id="div3" class="form-group">
+    <label id="div3" for="password">ItemWeightSD:</label>
+    <input id="div3" type="text" class="form-control" id="ItemWeightSD" name="ItemWeightSD" placeholder="ItemWeightSD"  minlength="1">
+  </div>
+ </div>
+
+
+
+ <div id="storagedevice-fields" style="display: none;">
+  <div>
+    <label id="div3" for="password">ModelNumberSD:</label>
+    <input id="div3" type="text" class="form-control" id="ModelNumberSD" name="ModelNumberSD" placeholder="ModelNumberSD" value="<%= product.ModelNumberSD %>"   >
+  </div>
+  <div>
+    <label id="div3" for="password">WeightSD:</label>
+    <input id="div3" type="text" class="form-control" id="WeightSD" name="WeightSD" placeholder="WeightSD" value="<%= product.WeightSD %>"   >
+  </div>
+  <div>
+    <label id="div3" for="password">RamSizeSD:</label>
+    <input id="div3" type="text" class="form-control" id="RamSizeSD" name="RamSizeSD" placeholder="RamSizeSD" value="<%= product.RamSizeSD %>"   >
+  </div>
+  <div>
+    <label id="div3" for="password">MemoryStorageCapacitySD:</label>
+    <input id="div3" type="text" class="form-control" id="MemoryStorageCapacitySD" name="MemoryStorageCapacitySD" placeholder="MemoryStorageCapacitySD" value="<%= product.MemoryStorageCapacitySD %>"   >
+  </div>
+  <div>
+    <label id="div3" for="password">FlashMemoryTypeSD:</label>
+    <input id="div3" type="text" class="form-control" id="FlashMemoryTypeSD" name="FlashMemoryTypeSD" placeholder="FlashMemoryTypeSD" value="<%= product.FlashMemoryTypeSD %>"   >
+  </div>
+  <div>
+    <label id="div3" for="password">DigitalStorageCapacitySD:</label>
+    <input id="div3" type="text" class="form-control" id="DigitalStorageCapacitySD" name="DigitalStorageCapacitySD" placeholder="DigitalStorageCapacitySD" value="<%= product.DigitalStorageCapacitySD %>"   >
+  </div>
+  <div>
+    <label id="div3" for="password">HardWareInterfaceSD:</label>
+    <input id="div3" type="text" class="form-control" id="HardWareInterfaceSD" name="HardWareInterfaceSD" placeholder="HardWareInterfaceSD" value="<%= product.HardWareInterfaceSD %>"   >
+  </div>
+  <div>
+    <label id="div3" for="password">CampatibleDevicesSD:</label>
+    <input id="div3" type="text" class="form-control" id="CampatibleDevicesSD" name="CampatibleDevicesSD" placeholder="CampatibleDevicesSD" value="<%= product.CampatibleDevicesSD %>"   >
+  </div>
+  <div>
+    <label id="div3" for="password">SpecialFeatureSD:</label>
+    <input id="div3" type="text" class="form-control" id="SpecialFeatureSD" name="SpecialFeatureSD" placeholder="SpecialFeatureSD" value="<%= product.SpecialFeatureSD %>"   >
+  </div>
+  <div>
+    <label id="div3" for="password">ItemWeightSD:</label>
+    <input id="div3" type="text" class="form-control" id="ItemWeightSD" name="ItemWeightSD" placeholder="ItemWeightSD" value="<%= product.ItemWeightSD %>"   >
+  </div>
+</div>

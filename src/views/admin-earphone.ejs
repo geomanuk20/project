@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin-product</title>
+    <link rel="stylesheet" href="/public/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.datatables.net/v/bs5/dt-2.0.3/datatables.min.css" rel="stylesheet">
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <header>
+            <div class="container text-center bg-secondary">
+                <div class="row p-3 ms-5">
+                    <div class="col-1"><a href="/add-watch"><button style="color: blue;">add watch</button></a></div>
+                    <div class="col-1"><a href="/"><button style="color: blue;">home</button></a></div>
+                </div>
+            </div>
+        </header>
+        <section>
+            <div class="table-responsive p-5">
+                <% if (products && products.length > 0) { %>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="table-dark-black" style="background-color: gray;">
+                                <th>id</th>
+                                <th>image</th>
+                                <th>product</th>
+                                <th>model</th>
+                                <th>WithMicEP</th>
+                                <th>BatteryLifeEP</th>
+                                <th>HeadphoneTypeEP</th>
+                                <th>SalesPackageEP</th>
+                                <th>category</th>
+                                <th>brand</th>
+                                <th>price</th>
+                                <th>discount</th>
+                                <th>action</th>
+                                <th>Color</th>
+                                <th>ConnectivityEP</th>
+                                <th>HeadphoneDesignEP</th>
+                                <th>AccessoriesIncludedEP</th>
+                                <th>CompatatibleDevicesEP</th>
+                                <th>NetQuantityEP</th>
+                                <th>SweatProofEP</th>
+                                <th>DeepBassEP</th>
+                                <th>DesignForEp</th>
+                                <th>SystemRequirmentsEP</th>
+                                <th>IndicatorEp</th>
+                                <th>ControlsEP</th>
+                                <th>HeadphoneDriveUnitsEP</th>
+                                <th>WithMicrophoneEP</th>
+                                <th> WirelessRangeEP</th>
+                                <th>BluetoothVersionEP</th>
+                                <th>BluetoothRangeEP</th>
+                                <th>ChargingTimeEP</th>
+                                <th>PlayTimeEP</th>
+                                <th>StandbytimeEP</th>
+                                <th>WidthEP</th>
+                                <th>HeightEP</th>
+                                <th>DepthEP</th>
+                                <th>WeightEP</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% products.forEach((row, index) => { %>
+                                <tr class="align-middle">
+                                    <td><%= index %></td>
+                                    <td><img src="<%= row.imagePath %>" width="50" class="img-thumbnail"></td>
+                                    <td><%= row.product %></td>
+                                    <td><%= row.model %></td>
+                                    <td><%= row.WithMicEP %></td>
+                                    <td><%= row.BatteryLifeEP %></td>
+                                    <td><%= row.HeadphoneTypeEP %></td>
+                                    <td><%= row.SalesPackageEP %></td>
+                                    <td><%= row.category %></td>
+                                    <td><%= row.brand %></td>
+                                    <td><%= row.price %></td>
+                                    <td><%= row.discountPercentage %></td>
+                                    <td>
+                                        <a href="/edit_product/<%= row._id %>" class="text-sucess"><i class="fas fa-edit fa-lg mx-1"></i></a>
+                                        
+                                        <a href="/delete_product/<%= row._id %>" class="text-danger"><i class="fas fa-trash fa-lg mx-1"></i></a>
+    
+                                        <a href="/block/<%= row._id %>" class="text-warning"><i class="fas fa-stop fa-lg mx-1"></i></a>
+    
+                                    </td>
+                                    <td><%= row.Color %></td>
+                                    <td><%= row.ConnectivityEP %></td>
+                                    <td><%= row.HeadphoneDesignEP %></td>
+                                    <td><%= row.AccessoriesIncludedEP %></td>
+                                    <td><%= row.CompatatibleDevicesEP %></td>
+                                    <td><%= row.NetQuantityEP %></td>
+                                    <td><%= row.SweatProofEP %></td>
+                                    <td><%= row.DeepBassEP %></td>
+                                    <td><%= row.DesignForEP%></td>
+                                    <td><%= row.SystemRequirmentsEP %></td>
+                                    <td><%= row.IndicatorEP %></td>
+                                    <td><%= row.ControlsEP %></td>
+                                    <td><%= row.HeadphoneDriveUnitsEP %></td>
+                                    <td><%= row.WithMicrophoneEP %></td>
+                                    <td><%= row.WirelessRangeEP %></td>
+                                    <td><%= row.BluetoothVersionEP %></td>
+                                    <td><%= row.BluetoothRangeEP %></td>
+                                    <td><%= row.ChargingTimeEP %></td>
+                                    <td><%= row.PlayTimeEP %></td>
+                                    <td><%= row.StandbytimeEP %></td>
+                                    <td><%= row.WidthEP %></td>
+                                    <td><%= row.HeightEP %></td>
+                                    <td><%= row.DepthEP %></td>
+                                    <td><%= row.WeightEP %></td>
+                                </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                <% } else { %>
+                    <h1 class="text_center text-secondary mt-5">No watch products found in the database</h1>
+                <% } %>
+            </div>
+        </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.datatables.net/v/bs5/dt-2.0.3/datatables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("table").DataTable({
+                order: [[0, 'desc']] 
+            });
+        });
+    </script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+var truncateElements = document.querySelectorAll('#admintext');
+truncateElements.forEach(function(element) {
+    var fullText = element.textContent.trim();
+    var truncatedText = fullText.split(' ').slice(0, 10).join(' ') + '...';
+    element.textContent = truncatedText;
+});
+});
+</script>

@@ -1,0 +1,81 @@
+<%- include('partials/header', { title: title }) %>
+<section>
+    <div id="list">
+    <div  class="row-md-3">
+        <div class="row ms-5  pt-3">
+            <div class="card ">
+              <h6><img style="margin-right: 1px;" class="ms-2 my-1" width="55" height="55" src="https://img.icons8.com/color/48/name--v1.png" alt="name--v1"/>&nbsp;hello</h6>
+              <h6 class="text-center ms-5" style="margin-top: -25px;">&nbsp;<%= Name %></h6>
+              </div>
+            </div>
+      </div>
+      <div id="border" class="row ms-5  pt-5">
+        <div class="card border-0">
+            <h5><a id="text" href=""><img width="35" height="35" src="https://img.icons8.com/ios-filled/35/order-completed.png" alt="order-completed"/>&nbsp;My Orders</a></h5>
+          </div>
+        </div>
+        <div id="border" class="row ms-5  pt-3">
+          <div class="card border-0">
+              <h5><a id="text" href=""><img width="35" height="35" src="https://img.icons8.com/fluency-systems-filled/40/user.png" alt="user"/>&nbsp;My Account</a></h5>
+              <a id="text" class="text-end" href="/user-personal-information">Profile information</a>
+              <a id="text"class="text-center ms-4" href="/address">Manage address</a>
+              <br>
+            </div>
+          </div>
+          <div  class="row ms-5  pt-3 ">
+            <div class="card border-0">
+                <h5><a id="text" href=""><img width="30" height="30" src="https://img.icons8.com/ios-filled/35/topic.png" alt="topic"/>&nbsp;My Stuff</a></h5>
+                <a id="text" class="ms-5" href="">wishlist</a>
+              </div>
+            </div>
+            <div class="row ms-5  pt-2">
+              <div class="card">
+                <button class=" border-0 bg-white"><a id="text" href="/logout">logout</a></button>
+                </div>
+              </div>
+        </div>
+        </div>
+      </div>
+  </div>
+</div>
+</section>
+<%- include('partials/footer') %>
+<section>
+  <div id="myorder">
+    <div class="table-responsive p-5">
+      
+          <table class="table table-striped">
+              <thead>
+                  <tr class="table-dark-black" style="background-color: gray;">
+                    <h5>My Order</h5>
+                      <th>id</th>
+                      <th>name</th>
+                      <th>password</th>
+                      <th>status</th>
+                      <th>action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                 
+                  <tr>
+                      <td>gd</td>
+                      <td>sdf</td>
+                      <td>sd</td>
+                      <td>
+                          <a href="" class="text-sucess"><i class="fas fa-edit fa-lg mx-1"></i></a>
+                          
+                          <a href="" class="text-danger"><i class="fas fa-trash fa-lg mx-1"></i></a>
+
+                          <a href="" class="text-warning"><i class="fas fa-stop fa-lg mx-1"></i></a>
+
+                      </td>
+                  </tr>
+                
+              </tbody>
+          </table>
+      
+          <h1 class="text_center text-secondary mt-4">no user found in the database</h1>
+          
+  </div>
+  </div>
+</section>

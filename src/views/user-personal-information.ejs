@@ -1,0 +1,52 @@
+<%- include('partials/header', { title: title }) %>
+<section>
+    <div id="list">
+    <div  class="row-md-3">
+        <div class="row ms-5  pt-3">
+            <div class="card ">
+              <h6><img style="margin-right: 1px;" class="ms-2 my-1" width="55" height="55" src="https://img.icons8.com/color/48/name--v1.png" alt="name--v1"/>&nbsp;hello</h6>
+              <h6 class="text-center ms-5" style="margin-top: -25px;">&nbsp;<%= Name %></h6>
+              </div>
+            </div>
+      </div>
+      <div id="border" class="row ms-5  pt-5">
+        <div class="card border-0">
+            <h5><a id="text" href="/user-profile"><img width="35" height="35" src="https://img.icons8.com/ios-filled/35/order-completed.png" alt="order-completed"/>&nbsp;My Orders</a></h5>
+          </div>
+        </div>
+        <div id="border" class="row ms-5  pt-3">
+          <div class="card border-0">
+              <h5><img width="35" height="35" src="https://img.icons8.com/fluency-systems-filled/40/user.png" alt="user"/>&nbsp;My Account</h5>
+              <a id="text" class="text-end" href="">Profile information</a>
+              <a id="text"class="text-center ms-4" href="/address">Manage address</a>
+              <br>
+            </div>
+          </div>
+          <div  class="row ms-5  pt-3 ">
+            <div class="card border-0">
+                <h5><img width="30" height="30" src="https://img.icons8.com/ios-filled/35/topic.png" alt="topic"/>&nbsp;My Stuff</h5>
+                <a id="text" class="ms-5" href="">wishlist</a>
+              </div>
+            </div>
+            <div class="row ms-5  pt-2">
+              <div class="card">
+                <button class=" border-0 bg-white"><a id="text" href="/logout">logout</a></button>
+                </div>
+              </div>
+        </div>
+        </div>
+      </div>
+  </div>
+</div>
+</section>
+<%- include('partials/footer') %>
+<section>
+  <div id="myorder">
+    <div class="ms-4 mt-4">
+      <h5>personal information <a href="/user-personal-edit/<%= id %>" style="text-decoration: none;"><small>Edit</small></a></h5>
+      <br>
+      <h6 class="text-secondary"><img width="25" height="25" src="https://img.icons8.com/ios-filled/25/user.png" alt="user"/>&nbsp;&nbsp;<%= Name %></h6>
+      <h6 class="text-secondary"><img width="25" height="25" src="https://img.icons8.com/forma-light-filled/30/000000/phone.png" alt="phone"/>&nbsp;&nbsp;<%= phone %></h6>
+      <h6 class="text-secondary"><img width="25" height="25" src="https://img.icons8.com/ios-filled/25/secured-letter--v1.png" alt="secured-letter--v1"/>&nbsp;&nbsp;<%= email %></h6>
+    </div>
+</section>

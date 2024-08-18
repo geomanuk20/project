@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin-product</title>
+    <link rel="stylesheet" href="/public/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.datatables.net/v/bs5/dt-2.0.3/datatables.min.css" rel="stylesheet">
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <header>
+        <div class="container text-center bg-secondary">
+            <div class="row p-3 ms-5">
+                <div class="col-1"><a  href="/add_product"><button style="color: blue;">add product</button></a></div>
+                <div class="col-1"><a href="/"><button style="color: blue;">home</button></a></div>
+            </div>
+        </div>
+    </header>   
+            <div class="table-responsive p-5">
+                <% if (products && products.length > 0) { %>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr class="table-dark-black" style="background-color: gray;">
+                                <th>id</th>
+                                <th>image</th>
+                                <th>product</th>
+                                <th>model</th>
+                                <th>ram</th>
+                                <th>rom</th>
+                                <th>battery</th>
+                                <th>display</th>
+                                <th>processor</th>
+                                <th>camera</th>
+                                <th>category</th>
+                                <th>brand</th>
+                                <th>price</th>
+                                <th>discount</th>
+                                <th>action</th>
+                                <th>Color</th>
+                                <th>BrowseType</th>
+                                <th>SimType</th>
+                                <th>HybridsimSlot</th>
+                                <th>touchscreen</th>
+                                <th>OTGCompatible</th>
+                                <th>QuickCharging</th>
+                                <th>SoundEnhancements</th>
+                                <th>DisplayFeatures</th>
+                                <th>DisplaySize</th>
+                                <th>ResolutionType</th>
+                                <th>DisplayType</th>
+                                <th>OtherDisplayFeatures</th>
+                                <th>OsProcessorFeature</th>
+                                <th>OperationSystem</th>
+                                <th>ProcessorType</th>
+                                <th>OperationFrequency</th>
+                                <th>MemoryStorageFeatures</th>
+                                <th>InternalStorage</th>
+                                <th>CameraFeatures</th>
+                                <th>PrimaryCameraAvailable</th>
+                                <th>PrimaryCamera</th>
+                                <th>PrimaryCameraFeatures</th>
+                                <th>SecondaryCameraAvailable</th>
+                                <th>SecondaryCamera</th>
+                                <th>SecondaryCameraFeatures</th>
+                                <th>HDRecording</th>
+                                <th>FullFDRecording</th>
+                                <th>VideoRecordingResolution</th>
+                                <th>DigitalZoom</th>
+                                <th>FrameRate</th>
+                                <th>DualCameraLens</th>
+                                <th>CallFeatures</th>
+                                <th>SpeakerPhone</th>
+                                <th>ConnectivityFeatures</th>
+                                <th>NetworkType</th>
+                                <th>SupportedNetwork</th>
+                                <th>InternetConnectivity</th>
+                                <th>PreinstalledBrowser</th>
+                                <th>MicroUSBVersion</th>
+                                <th>BluetoothSupport</th>
+                                <th>BluetoothVersion</th>
+                                <th>WifiVersion</th>
+                                <th>WiFiHotspot</th>
+                                <th>NFC</th>
+                                <th>GPSSupport</th>
+                                <th>OtherDetails</th>
+                                <th>SmartPhone</th>
+                                <th>SIMSize</th>
+                                <th>SMS</th>
+                                <th>VoiceInput</th>
+                                <th>GraphicPPI</th>
+                                <th>Sensors</th>
+                                <th>OtherFeatures</th>
+                                <th>GPSType</th>
+                                <th>MultimediaFeatures</th>
+                                <th>VideoFormats</th>
+                                <th>BatteryPowerFeatures</th>
+                                <th>BatteryCapacity</th>
+                                <th>Dimensions</th>
+                                <th>Width</th>
+                                <th>Height</th>
+                                <th>Depth</th>
+                                <th>Weight</th>
+                                <th>Warranty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           <% products.forEach((row,index) => { %>
+                            <tr class="align-middle">
+                                <td><%= index %></td>
+                                <td><img src="<%= row.imagePath %>" width="50" class="img-thumbnail" ></td>
+                                <td><%= row.product %></td>
+                                <td><%= row.model %></td>
+                                <td><%= row.ram %></td>
+                                <td><%= row.rom %></td>
+                                <td><%= row.battery %></td>
+                                <td><%= row.display %></td>
+                                <td><%= row.processor %></td>
+                                <td><%= row.camera %></td>
+                                <td><%= row.category %></td>
+                                 <td><%= row.brand %></td>
+                                <td><%= row.price %></td>
+                                <td><%= row.discountPercentage %></td>
+                                <td>
+                                    <a href="/edit_product/<%= row._id %>" class="text-sucess"><i class="fas fa-edit fa-lg mx-1"></i></a>
+                                    
+                                    <a href="/delete_product/<%= row._id %>" class="text-danger"><i class="fas fa-trash fa-lg mx-1"></i></a>
+
+                                    <a href="/block/<%= row._id %>" class="text-warning"><i class="fas fa-stop fa-lg mx-1"></i></a>
+
+                                </td>
+                                <td><%= row.Color %></td>
+                                <td><%= row.BrowseType %></td>
+                                <td><%= row.SimType %></td>
+                                <td><%= row.HybridsimSlot %></td>
+                                <td><%= row.touchscreen %></td>
+                                <td><%= row.OTGCompatible %></td>
+                                <td><%= row.QuickCharging %></td>
+                                <td><%= row.SoundEnhancements %></td>
+                                <td><%= row.DisplayFeatures %></td>
+                                <td><%= row.DisplaySize %></td>
+                                <td><%= row.ResolutionType %></td>
+                                <td><%= row.DisplayType %></td>
+                                <td id="admintext"><%= row.OtherDisplayFeatures %></td>
+                                <td><%= row.OsProcessorFeature %></td>
+                                <td><%= row.OperationSystem %></td>
+                                <td><%= row.ProcessorType %></td>
+                                <td id="admintext"><%= row.OperationFrequency %></td>
+                                <td><%= row.MemoryStorageFeatures %></td>
+                                <td><%= row.InternalStorage %></td>
+                                <td><%= row.CameraFeatures %></td>
+                                <td><%= row.PrimaryCameraAvailable %></td>
+                                <td><%= row.PrimaryCamera %></td>
+                                <td id="admintext"><%= row.PrimaryCameraFeatures %></td>
+                                <td><%= row.SecondaryCameraAvailable %></td>
+                                <td><%= row.SecondaryCamera %></td>
+                                <td id="admintext"><%= row.SecondaryCameraFeatures %></td>
+                                <td><%= row.HDRecording %></td>
+                                <td><%= row.FullHDRecording %></td>
+                                <td id="admintext"><%= row.VideoRecordingResolution %></td>
+                                <td><%= row.DigitalZoom %></td>
+                                <td><%= row.FrameRate %></td>
+                                <td><%= row.DualCameraLens %></td>
+                                <td><%= row.CallFeatures %></td>
+                                <td><%= row.SpeakerPhone %></td>
+                                <td><%= row.ConnectivityFeatures %></td>
+                                <td><%= row.NetworkType %></td>
+                                <td><%= row.SupportedNetwork %></td>
+                                <td><%= row.InternetConnectivity %></td>
+                                <td><%= row.PreinstalledBrowser %></td>
+                                <td><%= row.MicroUSBVersion %></td>
+                                <td><%= row.BluetoothSupport %></td>
+                                <td><%= row.BluetoothVersion %></td>
+                                <td id="admintext"><%= row.WifiVersion %></td>
+                                <td><%= row.WiFiHotspot %></td>
+                                <td><%= row.NFC %></td>
+                                <td><%= row.GPSSupport %></td>
+                                <td><%= row.OtherDetails %></td>
+                                <td><%= row.SmartPhone %></td>
+                                <td><%= row.SIMSize %></td>
+                                <td><%= row.SMS %></td>
+                                <td><%= row.VoiceInput %></td>
+                                <td><%= row.GraphicPPI %></td>
+                                <td id="admintext"><%= row.Sensors %></td>
+                                <td id="admintext"><%= row.OtherFeatures %></td>
+                                <td id="admintext"><%= row.GPSType %></td>
+                                <td id="admintext"><%= row.MultimediaFeatures %></td>
+                                <td><%= row.VideoFormats %></td>
+                                <td><%= row.BatteryPowerFeatures %></td>
+                                <td><%= row.BatteryCapacity %></td>
+                                <td><%= row.Dimensions %></td>
+                                <td><%= row.Width %></td>
+                                <td><%= row.Height %></td>
+                                <td><%= row.Depth %></td>
+                                <td><%= row.Weight %></td>
+                                <td><%= row.Warranty %></td>
+                                
+                            </tr>
+                          <% }); %>
+                        </tbody>
+                    </table>
+                <% } else { %>
+                    <h1 class="text_center text-secondary mt-5">no user found in the database</h1>
+                    <% } %>
+
+            </section>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdn.datatables.net/v/bs5/dt-2.0.3/datatables.min.js"></script>
+            <script>
+                $(document).ready(function () {
+                    $("table").DataTable({
+                        order: [[0, 'desc']] 
+                    });
+                });
+            </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var truncateElements = document.querySelectorAll('#admintext');
+        truncateElements.forEach(function(element) {
+            var fullText = element.textContent.trim();
+            var truncatedText = fullText.split(' ').slice(0, 10).join(' ') + '...';
+            element.textContent = truncatedText;
+        });
+    });
+</script>
